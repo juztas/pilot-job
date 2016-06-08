@@ -1,0 +1,14 @@
+Universe   = vanilla
+Executable = sleep.sh
+Arguments  = 100
+Log        = sleep.PC.log
+Output     = sleep.out.$(Cluster).$(Process)
+Error      = sleep.err.$(Cluster).$(Process)
++DESIRED_Sites = "T3_US_ANL"
+requirements = stringListMember(GLIDEIN_CMSSite,DESIRED_Sites)
+should_transfer_files = YES
+RequestMemory = 2000
+when_to_transfer_output = ON_EXIT
+x509userproxy = /tmp/x509up_u54594
+x509userproxysubject = "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jbalcas/CN=751133/CN=Justas Balcas"
+Queue 1    

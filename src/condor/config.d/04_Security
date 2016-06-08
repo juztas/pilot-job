@@ -1,0 +1,28 @@
+USE_PROCESS_GROUPS = False
+# Deny to write or administrate for anonymous...
+DENY_WRITE         = anonymous@*
+DENY_ADMINISTRATOR = anonymous@*
+DENY_DAEMON        = anonymous@*
+DENY_NEGOTIATOR    = anonymous@*
+# Authentification
+SEC_DEFAULT_AUTHENTICATION                = REQUIRED
+SEC_DEFAULT_AUTHENTICATION_METHODS        = GSI 
+SEC_DEFAULT_ENCRYPTION                    = OPTIONAL
+SEC_DEFAULT_INTEGRITY                     = REQUIRED
+SEC_DEFAULT_SESSION_DURATION              = 337623
+SEC_ENABLE_MATCH_PASSWORD_AUTHENTICATION  = True
+
+GSI_DELEGATION_KEYBITS    = 1024
+# I should include alca proxy also and also others in our group...
+GSI_DAEMON_NAME=/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jbalcas/CN=751133/CN=Justas Balcas
+
+# These directories will be overwritten automatically
+GSI_DAEMON_TRUSTED_CA_DIR = /afs/cern.ch/user/j/jbalcas/osg/osg-wn-client/etc/grid-security/certificates
+GSI_DAEMON_PROXY          = /afs/cern.ch/user/j/jbalcas/osg/osg-wn-client/etc/grid-security/gwms_proxy
+CERTIFICATE_MAPFILE       = /afs/cern.ch/user/j/jbalcas/condor/certs/condor_mapfile
+
+# This also has to be changed and only alcf should be allowed. 
+ALLOW_DAEMON = $(ALLOW_DAEMON), *.cern.ch
+ALLOW_DAEMON = $(ALLOW_DAEMON), *
+
+USE_CCB = "False"
