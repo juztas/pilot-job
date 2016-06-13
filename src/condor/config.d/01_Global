@@ -2,7 +2,7 @@
 #CONDOR_ADMIN = < some valid email >
 ## The condor ids may not be necessary
 # The central managers of the pool
-CONDOR_HOST = condor-justas.cern.ch
+CONDOR_HOST = $(HOSTNAME)
 # Select the collector to report to on the central manager\
 # We choose now only 9618 port
 COLLECTOR_HOST=$(CONDOR_HOST):9618

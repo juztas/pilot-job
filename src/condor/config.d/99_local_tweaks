@@ -1,19 +1,22 @@
 # To disable shared port completely
 # This has to be on for WN....
-USE_SHARED_PORT = false
+USE_SHARED_PORT = CHANGE
 
+
+GSI_DAEMON_TRUSTED_CA_DIR = CHANGE
+GSI_DAEMON_PROXY          = CHANGE
+CERTIFICATE_MAPFILE       = CHANGE
+EXECUTE = CHANGE
 # Over committing memory by 15% to minimize cpu wastage 
 MEMORY = 1.15 * $(DETECTED_MEMORY)
-
+DISK = 1000000000
 # Attach one VM to a single schedd to keep running jobs
 # Minimizes negotiator load and helps job turnover rate
 CLAIM_WORKLIFE = 86400	
 
-DISK = 300000000
-
-# Don't  run benchmarks 
-#RunBenchmarks = False
 # CONDOR_IDS should point to user which is running the WN or Collector
-CONDOR_IDS = 54594.1399
+CONDOR_IDS = CHANGE
 ALLOW_WRITE= *
 RunBenchmarks = false
+BIND_ALL_INTERFACES = CHANGE
+NETWORK_INTERFACE = CHANGE
