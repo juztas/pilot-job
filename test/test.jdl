@@ -9,6 +9,6 @@ requirements = stringListMember(GLIDEIN_CMSSite,DESIRED_Sites)
 should_transfer_files = YES
 RequestMemory = 2000
 when_to_transfer_output = ON_EXIT
-x509userproxy = /tmp/x509up_u54594
+x509userproxy = /tmp/x509up_u32292
 x509userproxysubject = "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=jbalcas/CN=751133/CN=Justas Balcas"
-Queue 1    
+Queue 20 
